@@ -14,6 +14,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'rhysd/vim-clang-format.git'
 call vundle#end()
 
 " now turn on filetype on again
@@ -122,3 +123,22 @@ hi TabLine ctermfg=White ctermbg=Black
 hi TabLineSel ctermfg=Black ctermbg=DarkGreen
 
 au BufRead,BufNewFile *.doxygen set syntax=doxygen
+
+" clang-format plugin configuration
+" 'f' in Visual Mode will reformat selected code
+xmap f :ClangFormat<CR>
+let g:clang_format#detect_style_file = 1
+let g:clang_format#code_style = 'mozilla'
+" Customization based on:
+" https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+let g:clang_format#style_options = {
+    \ "AccessModifierOffset" : -4,
+    \ "AllowShortFunctionsOnASingleLine": "None",
+    \ "AlwaysBreakTemplateDeclarations" : "true",
+    \ "BreakBeforeBraces" : "Attach",
+    \ "DerivePointerAlignment": "true",
+    \ "IndentWidth": 3,
+    \ "NamespaceIndentation": "All",
+    \ "Standard" : "C++11", }
+
+
