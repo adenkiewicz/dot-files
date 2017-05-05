@@ -14,7 +14,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'rhysd/vim-clang-format.git'
+Plugin 'rhysd/vim-clang-format'
+Plugin 'nvie/vim-flake8'
 call vundle#end()
 
 " now turn on filetype on again
@@ -141,4 +142,10 @@ let g:clang_format#style_options = {
     \ "NamespaceIndentation": "All",
     \ "Standard" : "C++11", }
 
-
+" vim-flake8 plugin configuration
+" temporary: remap from F7 to F3 (FIXME)
+autocmd FileType python map <buffer> <F3> :call Flake8()<CR>
+let g:flake8_error_marker='EE'
+let g:flake8_warning_marker='WW'
+" run Flake8() every time python file is saved /** EXPERIMENTAL **/
+autocmd BufWritePost *.py call Flake8()
