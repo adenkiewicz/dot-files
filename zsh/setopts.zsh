@@ -1,6 +1,8 @@
 # history
 setopt hist_ignore_all_dups
 setopt share_history
+setopt histignorespace
+export HISTSIZE=10000
 
 # completion
 setopt always_to_end
