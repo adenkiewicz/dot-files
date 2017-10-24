@@ -17,3 +17,6 @@ install tmux.conf .tmux.conf
 
 # zsh
 install zsh/zshrc, .zshrc
+
+# gdb
+install gdbinit .gdbinit
