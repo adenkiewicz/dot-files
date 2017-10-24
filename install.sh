@@ -2,12 +2,18 @@
 
 DOT_FILES_DIR="$(dirname $(readlink -f $0))"
 
+install () {
+    ln -s $DOT_FILES_DIR/$1 ~/$2 && echo "[+] $2" || echo "[-] $2"
+}
+
 # vim
-ln -s $DOT_FILES_DIR/vimrc ~/.vimrc
-if [ ! -d ~/.vim ]; then ln -s $DOT_FILES_DIR/vim ~/.vim; fi
+install vimrc .vimrc
+if [ ! -d ~/.vim ]; then 
+    install vim, .vim
+fi
 
 # tmux
-ln -s $DOT_FILES_DIR/tmux.conf ~/.tmux.conf
+install tmux.conf .tmux.conf
 
 # zsh
-ln -s $DOT_FILES_DIR/zsh/zshrc ~/.zshrc
+install zsh/zshrc, .zshrc
