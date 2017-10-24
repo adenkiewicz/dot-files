@@ -20,3 +20,6 @@ install zsh/zshrc .zshrc
 
 # gdb
 install gdbinit .gdbinit
+
+# git
+install gitconfig .gitconfig

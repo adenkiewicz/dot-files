@@ -1,0 +1,23 @@
+[user]
+	name = Adrian Denkiewicz
+	email = adrian.denkiewicz@gmail.com
+
+[core]
+	editor = vim
+    excludesfile = ~/.gitignore
+
+[color]
+    ui = auto
+
+[color]
+
+[alias]
+	cp = cherry-pick
+	co = checkout
+	l = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(bold red)%d%C(reset) %C(white)%s%C(reset) %C(bold white). %an%C(reset)' --abbrev-commit --date=relative
+    d = diff
+
+[merge]
+	tool = vimdiff
+[push]
+	default = current
