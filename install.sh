@@ -9,7 +9,7 @@ install () {
 # vim
 install vimrc .vimrc
 if [ ! -d ~/.vim ]; then 
-    install vim, .vim
+    install vim .vim
 fi
 
 # tmux
