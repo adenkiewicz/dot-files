@@ -7,7 +7,7 @@ export HISTSIZE=10000
 # completion
 setopt always_to_end
 setopt complete_in_word
-setopt extended_global # http://www.refining-linux.org/archives/37/ZSH-Gem-2-Extended-globbing-and-expansion/
+setopt extended_glob # http://www.refining-linux.org/archives/37/ZSH-Gem-2-Extended-globbing-and-expansion/
 
 # var
 setopt RM_STAR_WAIT # enable annoying confirmation before rm *. Just in case.
