@@ -13,3 +13,6 @@ setopt extended_glob # http://www.refining-linux.org/archives/37/ZSH-Gem-2-Exten
 setopt RM_STAR_WAIT # enable annoying confirmation before rm *. Just in case.
 setopt no_beep # don't beep on error
 setopt short_loops # for f in *; echo $f
+
+# enable zmv
+autoload -U zmv
