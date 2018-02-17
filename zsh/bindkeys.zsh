@@ -21,3 +21,6 @@ export KEYTIMEOUT=1
 # fix backspace behavior after coming from VIM mode
 bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
+
+# add support for ^R search
+bindkey '^R' history-incremental-search-backward
