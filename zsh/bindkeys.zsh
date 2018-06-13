@@ -22,5 +22,16 @@ export KEYTIMEOUT=1
 bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
 
-# add support for ^R search
-bindkey '^R' history-incremental-search-backward
+# enable history searching
+bindkey -M vicmd '?' history-incremental-search-backward
+bindkey -M vicmd '/' history-incremental-search-forward
+bindkey -M viins '^R' history-incremental-pattern-search-backward
+bindkey -M viins '^F' history-incremental-pattern-search-forward
+
+# beginning search with arrow keys
+bindkey "^[OA" up-line-or-beginning-search
+bindkey "^[OB" down-line-or-beginning-search
+
+# fix for home and end keys
+bindkey -M viins "[H" beginning-of-line
+bindkey -M viins "[F" end-of-line
