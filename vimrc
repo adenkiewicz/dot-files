@@ -2,7 +2,7 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 set nowrap
-set term=screen-256color
+set term=xterm-256color
 
 filetype off " for now, Vundle requires it
 set rtp+=~/.vim/bundle/vundle/
