@@ -115,7 +115,7 @@ colorscheme desert
 set t_Co=256
 let g:airline_theme='kolor'
 set laststatus=2 
-hi ColorColumn ctermbg=8 guibg=#000000
+hi ColorColumn ctermbg=LightYellow guibg=LightYellow
 let &colorcolumn="80,".join(range(120,999),",") " color 80th column and 120+
 
 " various highlights
