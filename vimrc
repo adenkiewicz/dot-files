@@ -149,3 +149,6 @@ let g:flake8_error_marker='EE'
 let g:flake8_warning_marker='WW'
 " run Flake8() every time python file is saved /** EXPERIMENTAL **/
 autocmd BufWritePost *.py call Flake8()
+
+" enable spellcheck for text files
+autocmd FileType markdown,md,tex,latex setlocal spell
