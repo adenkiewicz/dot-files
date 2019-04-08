@@ -152,3 +152,5 @@ autocmd BufWritePost *.py call Flake8()
 
 " enable spellcheck for text files
 autocmd FileType markdown,md,tex,latex setlocal spell
+hi clear SpellBad
+hi SpellBad cterm=underline ctermfg=red
