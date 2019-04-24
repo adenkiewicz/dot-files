@@ -150,6 +150,9 @@ let g:flake8_warning_marker='WW'
 " run Flake8() every time python file is saved /** EXPERIMENTAL **/
 autocmd BufWritePost *.py call Flake8()
 
+" custom templates
+command LoadPwnTemplate :0r ~/.vim/templates/pwn.py
+
 " enable spellcheck for text files
 autocmd FileType markdown,md,tex,latex setlocal spell
 hi clear SpellBad
