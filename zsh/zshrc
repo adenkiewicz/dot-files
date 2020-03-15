@@ -6,6 +6,7 @@ source $ZSH_HOME/bindkeys.zsh
 source $ZSH_HOME/exports.zsh
 source $ZSH_HOME/aliases.zsh
 source $ZSH_HOME/completion.zsh
+fpath=($ZSH_HOME/completion $fpath)
 source $ZSH_HOME/helpers.zsh
 if [[ -a $ZSH_HOME/local.zsh ]]; then
     source $ZSH_HOME/local.zsh
