@@ -157,3 +157,9 @@ command LoadPwnTemplate :0r ~/.vim/templates/pwn.py
 autocmd FileType markdown,md,tex,latex setlocal spell
 hi clear SpellBad
 hi SpellBad cterm=underline ctermfg=red
+
+" format XML
+command FormatXML :%!xmllint --format -
+
+" sort IPs
+command SortIPs :%!sort -t . -n
