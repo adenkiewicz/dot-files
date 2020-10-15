@@ -35,3 +35,5 @@ bindkey "^[OB" down-line-or-beginning-search
 # fix for home and end keys
 bindkey -M viins "[H" beginning-of-line
 bindkey -M viins "[F" end-of-line
+bindkey "\E[1~" beginning-of-line
+bindkey "\E[4~" end-of-line
