@@ -30,3 +30,30 @@ function no_proxy {
     unset ftp_proxy
     unset all_proxy
 }
+
+function scan_shodan_from_file () {
+    # perform IP extension on given file
+    ips=($(nmap -sL -n -iL $1 | grep 'Nmap scan report for' | cut -f 5 -d ' '))
+    for i in $ips; do
+        nmap --script shodan-api -sn -Pn -n $i 
+    done
+}
+
+function scan_headers () {
+    export host=`echo $1 | awk "-F[/:]" '{print $4}'`
+    echo Scanning $1, results will be saved to ${host}_headers.xml
+    python3 /opt/securityheaders/securityheaders.py $1 --formatter json --flatten | python3 /opt/PTCC/Canopy/SecurityHeaders2Canopy.py > "${host}_headers.xml"
+}
+
+function scan_headers_from_file () {
+    for host in `cat "$1"`; scan_headers $host
+}
+
+function scan_tls () {
+    echo Scanning $1, results will be saved to ${1}_testssl.xml
+    /opt/testssl.sh/testssl.sh --jsonfile "${1}_testssl.json" $1 ; python3 /opt/PTCC/Canopy/Testssl2Canopy.py "${1}_testssl.json" "${1}_testssl.xml"
+}
+
+function scan_tls_from_file () {
+    for host in `cat "$1"`; scan_tls $host
+}
