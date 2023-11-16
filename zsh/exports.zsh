@@ -12,3 +12,11 @@ export PAGER='less'
 export HISTSIZE=1000
 export SAVEHIST=1000
 export HISTFILE=~/.zsh_history
+
+#export SEMGREP_SEND_METRICS=off
+
+# golang
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export GOBIN=$HOME/go/bin
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
