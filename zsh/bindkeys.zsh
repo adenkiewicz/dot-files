@@ -37,3 +37,10 @@ bindkey -M viins "[H" beginning-of-line
 bindkey -M viins "[F" end-of-line
 bindkey "\E[1~" beginning-of-line
 bindkey "\E[4~" end-of-line
+
+# fix for DELETE
+# Bind DELETE key in vi insert mode
+bindkey -M viins '^[[3~' delete-char
+
+# Bind DELETE key in vi command mode (optional)
+bindkey -M vicmd '^[[3~' delete-char
